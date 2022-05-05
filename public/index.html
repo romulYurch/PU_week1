@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PU test</title>
+    <style>
+        .keysForm{
+            width: 100%;
+        }
+        .keysForm label{
+            margin: 5px;
+            width: 200px;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .keysForm textarea{
+            width: 650px;
+            height: 75px;
+        }
+        .keysForm textarea.big{
+            height: 160px;
+        }
+        .col{
+            display: inline-block;
+            width: 49%;
+            vertical-align: top;
+        }
+        .col3{
+            display: inline-block;
+            width: 30%;
+            vertical-align: top;
+            border: 1px solid #000;
+            height: 500px;
+            overflow: auto;
+            padding: 10px;
+        }
+        .col3 textarea{
+            width: 90%;
+        }
+    </style>
+    <script type="text/javascript" src="/dist/build.js"></script>
+</head>
+<body>
+<form method="get" class="keysForm">
+    <div class='col'>
+        <label for="privateKeyBox" >Приватный ключ</label>
+        <textarea name='privateKey' id='privateKeyBox' class="big" disabled="disabled" ></textarea>
+        <label for="msgBox" >Сообщение</label>
+        <textarea name='msg' id='msgBox' ></textarea>
+        <label for="signBox" >Подпись</label>
+        <textarea name='sign' id='signBox' ></textarea>
+    </div>
+    <div class='col'>
+        <label for="publicKeyBox" >Публичный ключ</label>
+        <textarea name='publicKey' id='publicKeyBox' disabled="disabled" ></textarea>
+        <label for="publicKeyTestBox" >Тест публичного ключа</label>
+        <textarea name='publicKeyTest' id='publicKeyTestBox' ></textarea>
+        <label for="encodedMsgBox" >Хешированное сообщение</label>
+        <textarea name='encodedMsg' id='encodedMsgBox' ></textarea>
+        <input type="button" name='verify' id='verifyBtn' value="Проверить подпись"/>
+        <input type="button" name='genKey' id='genKeyBtn' value="Обновить ключи"/>
+    </div>
+    <hr>
+    <div class='col3'>
+        <h1 id='userName0'>Петя</h1>
+        <label for="msgBox0" >Сообщение</label>
+        <textarea name='msg0' id='msgBox0' ></textarea>
+        <input type="button" name='sendBtn0' id='sendBtn0' value="Отправить" disabled="disabled"/>
+        <br><br><br><br>
+        <label for="keyBox0" >Публичный ключ</label>
+        <textarea name='keyBox0' id='keyBox0'></textarea>
+        <input type="button" name='genKeyBtn0' id='genKeyBtn0' value="Обновить ключи"/>
+    </div>
+    <div class='col3'>
+        <h1>Чат</h1>
+        <div id='chatBox'></div>
+    </div>
+    <div class='col3'>
+        <h1 id='userName1'>Вася</h1>
+        <label for="msgBox1" >Сообщение</label>
+        <textarea name='msg1' id='msgBox1' ></textarea>
+        <input type="button" name='sendBtn1' id='sendBtn1' value="Отправить" disabled="disabled"/>
+        <br><br><br><br>
+        <label for="keyBox1" >Публичный ключ</label>
+        <textarea name='keyBox1' id='keyBox1'></textarea>
+        <input type="button" name='genKeyBtn1' id='genKeyBtn1' value="Обновить ключи"/>
+    </div>
+</form>
+</body>
+</html>
